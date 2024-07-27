@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden;
+}
+
+.main-area {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.dino-area {
+    width: 55%;
+    background-color: rgba(249, 249, 249, 0.5); /* Adjust transparency for visibility */
+    height: 30%;
+    display: flex;
+    position: relative; /* Added position relative for absolute positioning of obstacles */
+    align-items: flex-end;
+    z-index: 1;
+    overflow : hidden;
+}
+
+.dino {
+    /* background-color: green; */
+    width: 3%;
+    height: 30%;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    left: 80px; /* Positioned to the right edge */
+}
+.dino img{
+    height: 100%;
+    transform: scaleX(-1);
+}
+
+.dino.jump {
+    animation: jump 1s ease-in-out normal forwards;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.obstacle {
+    /* background-color: rgb(128, 0, 0); */
+    width: 2%;
+    height: 25%;
+    position: absolute; /* Changed to absolute for better positioning */
+    bottom: 0;
+    z-index: 2;
+    right: 0; /* Start at the left edge */
+}
+
+.obstacle img{
+    height: 100%;
+    transform: scaleX(-1);
+}
